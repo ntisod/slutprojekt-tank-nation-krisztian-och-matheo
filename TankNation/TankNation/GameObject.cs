@@ -11,14 +11,26 @@ namespace TankNation
 {
     class GameObject
     {
-        protected Texture2D gfx;
-        protected Vector2 pos;
-
-        public GameObject(Texture2D gfx, float x, float y)
+        public Vector2 pos
         {
-            this.gfx = gfx;
-            this.pos = x;
-            this.pos = y;
+            get;
+            set;
+        }
+        public Texture2D gfx
+        {
+            get;
+            set;
+        }
+        public float angle
+        {
+            get;
+            set;
+        }
+        public virtual void Draw(SpriteBatch spriteBatch, Vector2 DrawOffset)
+        {
+            spriteBatch.Draw(gfx, pos - DrawOffset + new Vector2(400, 300), null,
+                Color.White, angle + (float)Math.PI / 2, new Vector2(gfx.Width / 2, gfx.Height / 2), 1.0f
+                SpriteEffects.None, 0);
         }
     }
 }
