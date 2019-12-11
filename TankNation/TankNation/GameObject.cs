@@ -17,6 +17,8 @@ namespace TankNation
         public GameObject(Texture2D gfx, float x, float y)
         {
             this.gfx = gfx;
+            this.pos = x;
+            this.pos = y;
         }
     }
 }
