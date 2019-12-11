@@ -14,6 +14,8 @@ namespace TankNation
         GraphicsDeviceManager gfx;
         SpriteBatch spriteBatch;
 
+        Player player;
+
         public Game1()
         {
             gfx = new GraphicsDeviceManager(this);
