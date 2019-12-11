@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace TankNation
 {
-    class PowerUp
+    class Meter : GameObject
     {
-        //Tid som gold coin ska finnas på skärmen
-        double: timeToDie;
+
     }
 }
