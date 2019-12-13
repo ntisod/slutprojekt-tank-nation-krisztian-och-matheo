@@ -9,6 +9,6 @@ namespace TankNation
     class PowerUp
     {
         //Tid som gold coin ska finnas på skärmen
-        double: timeToDie;
+        double timeToDie;
     }
 }
