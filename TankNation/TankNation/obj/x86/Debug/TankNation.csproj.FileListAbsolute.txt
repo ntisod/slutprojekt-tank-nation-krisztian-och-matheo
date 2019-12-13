@@ -1,0 +1,2 @@
+C:\Users\user\Documents\GitHub\slutprojekt-tank-nation-krisztian-och-matheo\TankNation\TankNation\obj\x86\Debug\TankNation.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\slutprojekt-tank-nation-krisztian-och-matheo\TankNation\TankNation\obj\x86\Debug\TankNation.csproj.CoreCompileInputs.cache
