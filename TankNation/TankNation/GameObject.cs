@@ -29,7 +29,7 @@ namespace TankNation
         public virtual void Draw(SpriteBatch spriteBatch, Vector2 DrawOffset)
         {
             spriteBatch.Draw(gfx, pos - DrawOffset + new Vector2(400, 300), null,
-                Color.White, angle + (float)Math.PI / 2, new Vector2(gfx.Width / 2, gfx.Height / 2), 1.0f
+                Color.White, angle + (float)Math.PI / 2, new Vector2(gfx.Width / 2, gfx.Height / 2), 1.0f,
                 SpriteEffects.None, 0);
         }
     }
