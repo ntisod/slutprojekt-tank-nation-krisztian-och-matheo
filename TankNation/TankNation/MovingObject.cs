@@ -11,19 +11,18 @@ namespace TankNation
 {
     class MovingObject : GameObject
     {
-        public Vector2 direction
+        public Vector2 Direction;
+        public float Speed;
+
+        public MovingObject(Vector2 Direction, float Speed, Vector2 Position, Texture2D Gfx, float Angle) : base(Position, Gfx, Angle)
         {
-            get;
-            set;
+            this.Direction = Direction;
+            this.Speed = Speed;
         }
-        public float speed
-        {
-            get;
-            set;
-        }
+
         public virtual void Update(GameTime gameTime)
         {
-            pos += direction * speed;
+            Position += Direction * Speed;
         }
     }
 }

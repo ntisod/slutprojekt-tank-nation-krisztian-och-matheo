@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/user/Documents/GitHub/slutprojekt-tank-nation-krisztian-och-matheo/TankNation/TankNation/Content/File.spritefont</SourceFile>
+  <SourceTime>2019-12-17T16:36:27.1991537+01:00</SourceTime>
+  <DestFile>C:/Users/user/Documents/GitHub/slutprojekt-tank-nation-krisztian-och-matheo/TankNation/TankNation/Content/bin/Windows/Font.xnb</DestFile>
+  <DestTime>2019-12-18T10:39:33.3067393+01:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2018-12-08T17:35:54+01:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
