@@ -27,6 +27,7 @@ namespace TankNation
         public Tank(bool Enemy, Vector2 Direction, Vector2 Position, Texture2D Gfx) : base(Direction, 0, Position, Gfx, -(float)(Math.PI / 2))
         {
             //alla mot alla
+            //initialize
             this.Enemy = Enemy;
             MaxSpeed = 2.5F;
             ShotPower = 0;
@@ -36,15 +37,16 @@ namespace TankNation
         }
         public void Respawn()
         {
+            //respawnar man med 100 hp
             Life = 100F;
             Random randomerare = new Random();
-            Position = new Vector2(randomerare.Next(500), randomerare.Next(500));
+            Position = new Vector2(randomerare.Next(500), randomerare.Next(500));// vart man respawnar.
             Angle = 0;
 
         }
         public override void Update(GameTime gameTime)
         {
-
+            //hur man kontroelrar tank och hur snabt går det.
             KeyboardState ks = Keyboard.GetState();
 
             if (ks.IsKeyDown(Keys.W))
