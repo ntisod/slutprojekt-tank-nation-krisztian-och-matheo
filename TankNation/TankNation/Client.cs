@@ -12,11 +12,15 @@ namespace TankNation
         NetClient client;
         int ID;
     }
+    public void Startclient()
+    {
+
+    }
     void ClientListenThread()
     {
 
     }
-    void SendMessage()
+    public void SendMessage()
     {
 
     }

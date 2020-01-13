@@ -198,10 +198,10 @@ namespace TankNation
             }
             //Skriver ut spelarnas namn och liv mm..
             string nameFormat = "{0}\nLife: {1}%\n\nKills: {2}";
-            displayMessage = string.Format(nameFormat, "Player1", Player1.Life, Player1.Kills);
+            displayMessage = string.Format(nameFormat, "Green-Tank", Player1.Life, Player1.Kills);
             spriteBatch.DrawString(font, displayMessage, new Vector2(51, 4), Color.Black);
             spriteBatch.DrawString(font, displayMessage, new Vector2(50, 5), Color.White);
-            displayMessage = string.Format(nameFormat, "Player2", Player2.Life, Player2.Kills);
+            displayMessage = string.Format(nameFormat, "Red-Tank", Player2.Life, Player2.Kills);
             spriteBatch.DrawString(font, displayMessage, new Vector2(251, 4), Color.Black);
             spriteBatch.DrawString(font, displayMessage, new Vector2(250, 5), Color.White);
             spriteBatch.End();
