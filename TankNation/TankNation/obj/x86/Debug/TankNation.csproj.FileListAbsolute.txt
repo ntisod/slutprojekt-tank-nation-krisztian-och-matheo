@@ -29,3 +29,4 @@ C:\Users\user\Documents\GitHub\slutprojekt-tank-nation-krisztian-och-matheo\Tank
 C:\Users\user\Documents\GitHub\slutprojekt-tank-nation-krisztian-och-matheo\TankNation\TankNation\obj\x86\Debug\TankNation.csproj.CopyComplete
 C:\Users\user\Documents\GitHub\slutprojekt-tank-nation-krisztian-och-matheo\TankNation\TankNation\obj\x86\Debug\TankNation.exe
 C:\Users\user\Documents\GitHub\slutprojekt-tank-nation-krisztian-och-matheo\TankNation\TankNation\obj\x86\Debug\TankNation.pdb
+C:\Users\user\Documents\GitHub\slutprojekt-tank-nation-krisztian-och-matheo\TankNation\TankNation\bin\Windows\x86\Debug\Lidgren.Network.dll

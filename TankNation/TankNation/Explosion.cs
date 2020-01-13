@@ -19,6 +19,7 @@ namespace TankNation
         public int Frame;
         public int AnimationSpeed;
         public bool Active;
+        public Vector2 customHitbox;
 
         public Explosion(Vector2 Position, Texture2D Gfx) : base(Position, Gfx, 0)
         {
@@ -27,6 +28,7 @@ namespace TankNation
             Active = true;
             AnimationSpeed = 30;
             Angle = 0;
+            customHitbox = new Vector2(50, 50);
         }
         public void Update(GameTime gameTime)
         {

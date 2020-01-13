@@ -59,5 +59,22 @@ namespace TankNation
             }
             return (collision);
         }
+
+        public bool CheckCollision(GameObject target, Vector2 customHitbox)
+        {
+            bool collision;
+            double xdiff = this.Position.X - target.Position.X;
+            double ydiff = this.Position.Y - target.Position.Y;
+
+            if ((xdiff * xdiff + ydiff * ydiff) < (this.Rad + (customHitbox.X / 2)) * (this.Rad + (customHitbox.Y / 2)))
+            {
+                collision = true;
+            }
+            else
+            {
+                collision = false;
+            }
+            return (collision);
+        }
     }
 }

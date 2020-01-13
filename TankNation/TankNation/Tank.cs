@@ -95,5 +95,16 @@ namespace TankNation
 
             base.Update(gameTime);
         }
+
+        public static String[] GetUpdate(string updateString)
+        {
+            String[] values = updateString.Split(':');
+
+
+            // "1:76:50:16"
+            // "ID:HP:POS.X:POS.Y" etc.
+    
+            return values;
+        }
     }
 }

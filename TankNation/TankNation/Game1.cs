@@ -84,11 +84,11 @@ namespace TankNation
 
             foreach(Explosion explosion in allExplosions.ToArray())
             {
-                if (Player2.CheckCollision(explosion))
+                if (Player2.CheckCollision(explosion, explosion.customHitbox))
                 {
                     Player2.Life -= 1;
                 }
-                if (Player1.CheckCollision(explosion))
+                if (Player1.CheckCollision(explosion, explosion.customHitbox))
                 {
                     Player1.Life -= 1;
                 }
