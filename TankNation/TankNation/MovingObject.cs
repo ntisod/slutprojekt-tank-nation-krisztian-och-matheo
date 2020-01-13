@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace TankNation
 {
-    class MovingObject : GameObject
+    public class MovingObject : GameObject
     {
         public Vector2 Direction;
         public float Speed;

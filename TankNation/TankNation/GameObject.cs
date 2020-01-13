@@ -10,9 +10,9 @@ using Microsoft.Xna.Framework.Content;
 
 namespace TankNation
 {
-    class GameObject
+    public class GameObject
     {
-
+        //konstrukor.
         public Vector2 Position;
         public Texture2D Gfx;
         public float Angle;
@@ -43,6 +43,7 @@ namespace TankNation
 
             }
         }
+        // den här metoden kollar om dett fins collision.
         public bool CheckCollision(GameObject target)
         {
             bool collision;

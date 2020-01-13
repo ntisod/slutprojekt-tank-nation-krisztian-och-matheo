@@ -12,9 +12,9 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TankNation
 {
-    class Tank : MovingObject
+    public class Tank : MovingObject
     {
-
+        //det här är spelare och deras live speed kills.
         public bool Enemy;
         public float MaxSpeed;
         public float ShotPower;
@@ -26,6 +26,7 @@ namespace TankNation
 
         public Tank(bool Enemy, Vector2 Direction, Vector2 Position, Texture2D Gfx) : base(Direction, 0, Position, Gfx, -(float)(Math.PI / 2))
         {
+            //alla mot alla
             this.Enemy = Enemy;
             MaxSpeed = 2.5F;
             ShotPower = 0;
@@ -37,7 +38,7 @@ namespace TankNation
         {
             Life = 100F;
             Random randomerare = new Random();
-            Position = new Vector2(randomerare.Next(1000), randomerare.Next(1000));
+            Position = new Vector2(randomerare.Next(500), randomerare.Next(500));
             Angle = 0;
 
         }

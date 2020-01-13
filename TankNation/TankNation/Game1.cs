@@ -10,10 +10,12 @@ namespace TankNation
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class Game1 : Game //det här är main class som skapar spelaren och ritar ut saker som life meter, power meter, bana och kills.
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        Client client;//skapa clienten
 
         Tank Player1, Player2; //skapa två spelare/tanks
         GameObject Bana; //Skapa ett GameObj som ska användas som bana
@@ -38,7 +40,7 @@ namespace TankNation
             base.Initialize();
         }
 
-        protected override void LoadContent()
+        protected override void LoadContent()// I den här metoden vi ritar ut grafix till alt som finns.
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -53,25 +55,29 @@ namespace TankNation
             Player1 = new Tank(false, new Vector2(0, -1), new Vector2(400, 300), greenTankGfx);
             Player2 = new Tank(false, new Vector2(0, -1), new Vector2(500, 400), redTankGfx);
 
-            Bana = new GameObject(Vector2.Zero, level1Gfx, 0);
+            Bana = new GameObject(Vector2.Zero, level1Gfx, 0);//vi skapar banan på 0,0
 
             PowerMeter = new Meter(new Vector2(350, 350), redMeterGfx, 0);
-            Player1LifeMeter = new Meter(new Vector2(50, 50), lifeMeterGfx, 0);
+            Player1LifeMeter = new Meter(new Vector2(50, 50), lifeMeterGfx, 0);// skapar life meter här.
             Player2LifeMeter = new Meter(new Vector2(250, 50), lifeMeterGfx, 0);
-            
-            font = Content.Load<SpriteFont>("Font");
+
+            client = new Client();
+
+            font = Content.Load<SpriteFont>("Font");//bara för att va snyg vi gör ett font ändring.
         }
 
         protected override void UnloadContent()
         {
         }
 
-        protected override void Update(GameTime gameTime)
+        protected override void Update(GameTime gameTime)//Här vi uppdaterar alt som fins i spelet (kills, collision, life meter)
         {
             Player1.Update(gameTime);
             PowerMeter.Value = Player1.ShotPower;
             Player1LifeMeter.Value = Player1.Life;
             Player2LifeMeter.Value = Player2.Life;
+
+            client.SendMessage($"Tank position : {Player1.Position}");
 
             if (Player1.ShotFired)
             {
@@ -132,7 +138,7 @@ namespace TankNation
                 {
                     if (Player1.Speed > Player2.Speed)
                     {
-                        Player2.Life -= 5;
+                        Player2.Life -= 5;//dmg från collison
                         Player1.Speed = 0F;
                         Player2.Position = Player2.Position + Player1.Direction * 10F;
                     }
@@ -140,7 +146,7 @@ namespace TankNation
                     {
                         if (Player1.Speed == Player2.Speed)
                         {
-                            Player2.Life -= 5;
+                            Player2.Life -= 5;//dmg från collison
                             Player1.Speed = 0F;
                             Player2.Position = Player2.Position + Player1.Direction * 10F;
                             Player1.Life -= 5;
@@ -159,15 +165,17 @@ namespace TankNation
 
             if (Player2.Life < 0)
             {
-                Player1.Kills++;
+                Player1.Kills++;//Här skriver vi ut kills och respawanr automatic 
                 Player2.Respawn();
+                client.SendMessage("Player 1 killed player 2");//skicar till server
 
             }
 
             if(Player1.Life < 0)
             {
-                Player2.Kills++;
+                Player2.Kills++;//samma
                 Player1.Respawn();
+                client.SendMessage("Player 2 killed player 1");//skicka till server.
             }
 
             base.Update(gameTime);
@@ -198,12 +206,13 @@ namespace TankNation
             }
             //Skriver ut spelarnas namn och liv mm..
             string nameFormat = "{0}\nLife: {1}%\n\nKills: {2}";
-            displayMessage = string.Format(nameFormat, "Green-Tank", Player1.Life, Player1.Kills);
+            displayMessage = string.Format(nameFormat, "Player1", Player1.Life, Player1.Kills);
             spriteBatch.DrawString(font, displayMessage, new Vector2(51, 4), Color.Black);
             spriteBatch.DrawString(font, displayMessage, new Vector2(50, 5), Color.White);
-            displayMessage = string.Format(nameFormat, "Red-Tank", Player2.Life, Player2.Kills);
+            displayMessage = string.Format(nameFormat, "Player2", Player2.Life, Player2.Kills);
             spriteBatch.DrawString(font, displayMessage, new Vector2(251, 4), Color.Black);
             spriteBatch.DrawString(font, displayMessage, new Vector2(250, 5), Color.White);
+            //och vi ändrar färg här.
             spriteBatch.End();
 
             base.Draw(gameTime);

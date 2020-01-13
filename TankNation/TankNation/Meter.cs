@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TankNation
 {
-    class Meter : GameObject
+    public class Meter : GameObject
     {
         public float Value;
 

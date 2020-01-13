@@ -21,7 +21,7 @@ namespace TankNation
         public bool Active;
         public Vector2 customHitbox;
 
-        public Explosion(Vector2 Position, Texture2D Gfx) : base(Position, Gfx, 0)
+        public Explosion(Vector2 Position, Texture2D Gfx) : base(Position, Gfx, 0)//här skapar vi explosion.
         {
             Time = 0;
             Frame = 0;
@@ -30,7 +30,7 @@ namespace TankNation
             Angle = 0;
             customHitbox = new Vector2(50, 50);
         }
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime)//animation med explosion.
         {
             Time += gameTime.ElapsedGameTime.Milliseconds;
             if (Time > AnimationSpeed)
@@ -44,7 +44,7 @@ namespace TankNation
             }
         }
 
-        public override void Draw(SpriteBatch spriteBatch, Vector2 DrawOffset)
+        public override void Draw(SpriteBatch spriteBatch, Vector2 DrawOffset)// här ritar ut explosion.
         {
             Rectangle tmp = new Rectangle((Frame % 4) * 64, (Frame / 4) * 64, 64, 64);
 
