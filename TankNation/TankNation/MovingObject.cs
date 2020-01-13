@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace TankNation
 {
+    // det här moving object och arvar från game object det betyder att alla moving ovject är ett gameobject.
     public class MovingObject : GameObject
     {
         public Vector2 Direction;
@@ -19,7 +20,7 @@ namespace TankNation
             this.Direction = Direction;
             this.Speed = Speed;
         }
-
+        // vi uppdaterar speed.
         public virtual void Update(GameTime gameTime)
         {
             Position += Direction * Speed;

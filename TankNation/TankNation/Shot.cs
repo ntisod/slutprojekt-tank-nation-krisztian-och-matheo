@@ -16,12 +16,12 @@ namespace TankNation
     {
 
         public float Power;
-
+        //konstruction.
         public Shot(float Power, Vector2 Direction, float Speed, Vector2 Position, Texture2D Gfx, float Angle) : base(Direction, Speed, Position, Gfx, Angle)
         {
             this.Power = Power;
         }
-
+        //vi uppdaterar hela tiden shot classen.
         public override void Update(GameTime gameTime)
         {     
 

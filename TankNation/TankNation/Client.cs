@@ -21,16 +21,26 @@ namespace TankNation
         }
         void Startclient()
         {
-            var config = new NetPeerConfiguration("TankNation"); //här startar vi clienten och koplar till server på localhost och
-            //på 14242 port
-            config.AutoFlushSendQueue = false;
-            client = new NetClient(config);
-            client.Start();
+            try
+            {
+                var config = new NetPeerConfiguration("TankNation"); //här startar vi clienten och koplar till server på localhost och
+                                                                     //på 14242 port
+                config.AutoFlushSendQueue = false;
+                client = new NetClient(config);
+                client.Start();
 
-            string ip = "localhost";
-            int port = 14242;
-            client.Connect(ip, port);
-            ClientListenThread();
+                string ip = "localhost";
+                int port = 14242;
+                client.Connect(ip, port);
+                ClientListenThread();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+            
+
         }
         void ClientListenThread()// Vi anväder Threads här för att lysna
         {

@@ -20,6 +20,7 @@ namespace TankNation
         {
             Value = 0;
         }
+        //det här är power meter som inte är moving objective so vi ärvar från gameobject.
         public override void Draw(SpriteBatch spriteBatch, Vector2 DrawOffset)
         {
 

@@ -77,7 +77,7 @@ namespace TankNation
             Player1LifeMeter.Value = Player1.Life;
             Player2LifeMeter.Value = Player2.Life;
 
-            client.SendMessage($"Tank position : {Player1.Position}");
+            //client.SendMessage($"Tank position : {Player1.Position}");
 
             if (Player1.ShotFired)
             {
